@@ -2,14 +2,34 @@ import UIKit
 import XCPlayground
 
 class CustomTableViewCell: UITableViewCell{
-    override func setNeedsLayout() {
-        super.setNeedsLayout()
+//    override func setNeedsLayout() {
+//        super.setNeedsLayout()
+//        
+//        // ここを書き換えることで UI の調整をする
+//        var label = UILabel(frame: CGRectMake(100, 10, 200, 50))
+//        label.text = "test label"
+//        self.addSubview(label)
+//    }
+    let nameLabel : UILabel!
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        // ここを書き換えることで UI の調整をする
-        var label = UILabel(frame: CGRectMake(100, 10, 200, 50))
-        label.text = "test label"
-        self.addSubview(label)
+        nameLabel = UILabel()
+        nameLabel.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+        contentView.addSubview(nameLabel)
     }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let nameLabelSize = nameLabel.sizeThatFits(CGSize(width: 100, height: 30))
+        let nameLabelOrigin = CGPoint(x: (CGRectGetHeight(bounds) - nameLabelSize.height) / 2, y:(CGRectGetHeight(bounds) - nameLabelSize.height) / 2)
+        nameLabel.frame = CGRect(x: nameLabelOrigin.x, y: nameLabelOrigin.y, width: nameLabelSize.width, height: nameLabelSize.height)
+    }
+    
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -19,11 +39,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
-        self.tableView = UITableView(frame:self.view.frame)
-        self.tableView!.dataSource = self
-        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(self.tableView)
+        view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
+        tableView = UITableView(frame:self.view.frame)
+        tableView.backgroundColor = UIColor(white: 0.8, alpha: 1.0)
+        tableView.dataSource = self
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        view.addSubview(tableView)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -33,7 +54,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell = CustomTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         let text = self.items[indexPath.row]
-        cell.textLabel?.text = text
+//        cell.textLabel?.text = text
+        cell.nameLabel.text = text
         return cell
     }
 }

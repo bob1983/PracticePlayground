@@ -43,9 +43,9 @@ for var grayColor : CGFloat = 0.9; grayColor > 0.0; grayColor -= 0.1 {
  *  TableViewDelegate
  */
 class SampleTableViewDelegate : NSObject, UITableViewDelegate {
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44
-    }
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        return 44
+//    }
 }
 
 /**
@@ -57,24 +57,28 @@ class SampleTableViewDatasource : NSObject, UITableViewDataSource {
         return 1
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 1
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = SampleTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SampleTableViewCell") as SampleTableViewCell
-        cell.configureData("hoge", imageName: "fuga")
+//        let cell = SampleTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SampleTableViewCell") as SampleTableViewCell
+//        cell.configureData("hoge", imageName: "fuga")
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SampleTableViewCell")
+        cell.textLabel?.text = "hoge"
         return cell
     }
 }
 
 class SampleViewController : UIViewController {
+//class SampleViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
-        view.backgroundColor = UIColor(white: 0.5, alpha: 1.0)
+        view.backgroundColor = UIColor.greenColor()
         
         tableView = UITableView(frame:view.frame)
         tableView.delegate = SampleTableViewDelegate()
@@ -83,6 +87,30 @@ class SampleViewController : UIViewController {
         tableView.registerClass(SampleTableViewCell.self, forCellReuseIdentifier: "SampleTableViewCell")
         view.addSubview(tableView)
     }
+    
+//    var tableView: UITableView!
+//    let items = ["Item 1", "Item 2", "Item 3"]
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.view.backgroundColor = UIColor.greenColor()
+//        self.view.frame = CGRect(x: 0, y: 0, width: 320, height: 480)
+//        self.tableView = UITableView(frame:self.view.frame)
+//        self.tableView!.dataSource = self
+//        self.tableView!.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        self.view.addSubview(self.tableView)
+//    }
+//    
+//    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+//        return self.items.count;
+//    }
+//    
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+//        var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+//        let text = self.items[indexPath.row]
+//        cell.textLabel?.text = text
+//        return cell
+//    }
 }
 
 /**
@@ -122,4 +150,5 @@ class SampleTableViewCell : UITableViewCell {
 }
 
 let viewController = SampleViewController()
+
 XCPShowView("Sample Table View", viewController.view)
