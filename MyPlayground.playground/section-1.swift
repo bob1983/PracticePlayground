@@ -1,8 +1,6 @@
 import UIKit
 import XCPlayground
 
-print(NSBundle.mainBundle())
-
 class CustomTableViewCell: UITableViewCell{
     override func setNeedsLayout() {
         super.setNeedsLayout()
@@ -42,3 +40,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 var ctrl = ViewController()
 XCPShowView("Playground tableview", ctrl.view)
+
