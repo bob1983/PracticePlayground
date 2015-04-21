@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SharedPlayground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:SharedFramework/SharedFramework.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SamplePlayground.xcodeproj">
    </FileRef>
    <FileRef
