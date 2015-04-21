@@ -14,6 +14,8 @@
 		E4217E8D1AE6846100AEE92A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4217E8C1AE6846100AEE92A /* Images.xcassets */; };
 		E4217E901AE6846100AEE92A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4217E8E1AE6846100AEE92A /* LaunchScreen.xib */; };
 		E4217E9C1AE6846100AEE92A /* SamplePlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4217E9B1AE6846100AEE92A /* SamplePlaygroundTests.swift */; };
+		E49C86631AE69E40008767A9 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C86621AE69E40008767A9 /* SampleTableViewCell.swift */; };
+		E49C86651AE6A17B008767A9 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C86641AE6A17B008767A9 /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		E4217E951AE6846100AEE92A /* SamplePlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamplePlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4217E9A1AE6846100AEE92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4217E9B1AE6846100AEE92A /* SamplePlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePlaygroundTests.swift; sourceTree = "<group>"; };
+		E49C86611AE6871A008767A9 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		E49C86621AE69E40008767A9 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		E49C86641AE6A17B008767A9 /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 		E4217E771AE6846000AEE92A = {
 			isa = PBXGroup;
 			children = (
+				E49C86611AE6871A008767A9 /* MyPlayground.playground */,
 				E4217E821AE6846100AEE92A /* SamplePlayground */,
 				E4217E981AE6846100AEE92A /* SamplePlaygroundTests */,
 				E4217E811AE6846100AEE92A /* Products */,
@@ -94,6 +100,8 @@
 			children = (
 				E4217E851AE6846100AEE92A /* AppDelegate.swift */,
 				E4217E871AE6846100AEE92A /* ViewController.swift */,
+				E49C86621AE69E40008767A9 /* SampleTableViewCell.swift */,
+				E49C86641AE6A17B008767A9 /* People.swift */,
 				E4217E891AE6846100AEE92A /* Main.storyboard */,
 				E4217E8C1AE6846100AEE92A /* Images.xcassets */,
 				E4217E8E1AE6846100AEE92A /* LaunchScreen.xib */,
@@ -271,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E49C86651AE6A17B008767A9 /* People.swift in Sources */,
 				E4217E881AE6846100AEE92A /* ViewController.swift in Sources */,
+				E49C86631AE69E40008767A9 /* SampleTableViewCell.swift in Sources */,
 				E4217E861AE6846100AEE92A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

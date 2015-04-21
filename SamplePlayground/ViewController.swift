@@ -8,18 +8,37 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var tableView: UITableView!
+    
+    var peoples = [
+        People(firstName: "John", lastName: "Doe"),
+        People(firstName: "Bob", lastName: "Strange"),
+        People(firstName: "Jane", lastName: "Doe")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return peoples.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: SampleTableViewCell = tableView.dequeueReusableCellWithIdentifier("SampleTableViewCell") as SampleTableViewCell
+        cell.configure(peoples[indexPath.row])
+        return cell
+    }
 }
 
