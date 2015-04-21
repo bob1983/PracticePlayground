@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SharedFramework
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(NSBundle.mainBundle())
     }
 
     override func didReceiveMemoryWarning() {

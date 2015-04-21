@@ -1,6 +1,8 @@
 import UIKit
 import XCPlayground
 
+print(NSBundle.mainBundle())
+
 class CustomTableViewCell: UITableViewCell{
     override func setNeedsLayout() {
         super.setNeedsLayout()

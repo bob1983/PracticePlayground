@@ -10,6 +10,8 @@
 		E42748171AE6B8620071E378 /* SharedFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E42748161AE6B8620071E378 /* SharedFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E427481D1AE6B8620071E378 /* SharedFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E42748111AE6B8620071E378 /* SharedFramework.framework */; };
 		E42748241AE6B8620071E378 /* SharedFrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42748231AE6B8620071E378 /* SharedFrameworkTests.swift */; };
+		E42748301AE6BB610071E378 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E427482F1AE6BB610071E378 /* SampleViewController.swift */; };
+		E42748321AE6BD9C0071E378 /* SampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42748311AE6BD9C0071E378 /* SampleViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		E427481C1AE6B8620071E378 /* SharedFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42748221AE6B8620071E378 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E42748231AE6B8620071E378 /* SharedFrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFrameworkTests.swift; sourceTree = "<group>"; };
+		E427482F1AE6BB610071E378 /* SampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		E42748311AE6BD9C0071E378 /* SampleViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				E42748161AE6B8620071E378 /* SharedFramework.h */,
+				E427482F1AE6BB610071E378 /* SampleViewController.swift */,
+				E42748311AE6BD9C0071E378 /* SampleViewController.storyboard */,
 				E42748141AE6B8620071E378 /* Supporting Files */,
 			);
 			path = SharedFramework;
@@ -192,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42748321AE6BD9C0071E378 /* SampleViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42748301AE6BB610071E378 /* SampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +327,7 @@
 		E42748281AE6B8620071E378 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +337,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E42748291AE6B8620071E378 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +406,7 @@
 				E42748291AE6B8620071E378 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E427482A1AE6B8620071E378 /* Build configuration list for PBXNativeTarget "SharedFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +415,7 @@
 				E427482C1AE6B8620071E378 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
