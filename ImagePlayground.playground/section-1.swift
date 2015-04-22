@@ -149,6 +149,3 @@ class SampleTableViewCell : UITableViewCell {
     }
 }
 
-let viewController = SampleViewController()
-
-XCPShowView("Sample Table View", viewController.view)

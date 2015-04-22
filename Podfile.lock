@@ -1,10 +1,10 @@
 PODS:
-  - Colours (5.6.2)
+  - Colours/Swift (5.6.0)
 
 DEPENDENCIES:
-  - Colours
+  - Colours/Swift
 
 SPEC CHECKSUMS:
-  Colours: 0afd4c3429656880fd4cff350ca3bf0ab86ca348
+  Colours: 77526d60453b32e44085a35b1a0ac71ee900dbda
 
 COCOAPODS: 0.36.0

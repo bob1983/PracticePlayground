@@ -5,7 +5,13 @@
       location = "group:SharedPlayground.playground">
    </FileRef>
    <FileRef
+      location = "group:UICheck.playground">
+   </FileRef>
+   <FileRef
       location = "group:ImagePlayground.playground">
+   </FileRef>
+   <FileRef
+      location = "group:ClassImplementing.playground">
    </FileRef>
    <FileRef
       location = "group:SharedFramework/SharedFramework.xcodeproj">

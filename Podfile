@@ -1,3 +1,5 @@
 platform :ios, '8.0'
 
-pod 'Colours'
+use_frameworks!
+
+pod 'Colours/Swift'

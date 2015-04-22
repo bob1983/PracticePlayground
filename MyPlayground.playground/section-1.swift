@@ -2,14 +2,6 @@ import UIKit
 import XCPlayground
 
 class CustomTableViewCell: UITableViewCell{
-//    override func setNeedsLayout() {
-//        super.setNeedsLayout()
-//        
-//        // ここを書き換えることで UI の調整をする
-//        var label = UILabel(frame: CGRectMake(100, 10, 200, 50))
-//        label.text = "test label"
-//        self.addSubview(label)
-//    }
     let nameLabel : UILabel!
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -35,7 +27,7 @@ class CustomTableViewCell: UITableViewCell{
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView: UITableView!
-    let items = ["Item 1", "Item 2", "Item 3"]
+    let items = ["太郎", "二郎", "三郎"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +46,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell = CustomTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         let text = self.items[indexPath.row]
-//        cell.textLabel?.text = text
         cell.nameLabel.text = text
         return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "セクションタイトル"
+    }
+    
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "フッター"
     }
 }
 
